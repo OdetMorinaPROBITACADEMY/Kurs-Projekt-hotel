@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Hotel Questionnaire</title>
+    <link rel="stylesheet" type="text/css" href="styles.css">
+</head>
+<body>
+    <h1>Hotel Questionnaire</h1>
+    <form id="rate-us-form" action="https://formspree.io/f/xqkoovab" method="POST">
+        <div class="rating-container">
+          
+          <label>
+            Your email:
+            <input type="email" name="email">
+          </label>
+          <label>
+            Your message:
+            <textarea name="message"></textarea>
+          </label>
+          <button type="submit">Send</button>
+          <span class="star" data-value="1">&#9733;</span>
+          <span class="star" data-value="2">&#9733;</span>
+          <span class="star" data-value="3">&#9733;</span>
+          <span class="star" data-value="4">&#9733;</span>
+          <span class="star" data-value="5">&#9733;</span>
+        </div>
+      
+        <div id="improvement-suggestions" style="display: none;">
+          <label for="feedback">What can we improve?</label>
+          <textarea id="feedback" name="feedback" rows="4" cols="50"></textarea>
+        </div>
+      
+      </form>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="script.js">
+        $(document).ready(function() {
+    // Handle form submission
+    $('#questionnaireForm').submit(function(e) {
+        e.preventDefault(); // Prevent form submission
+
+        // Get form values
+        var name = $('#name').val();
+        var email = $('#email').val();
+        var rating = $('#rating').val();
+        var feedback = $('#feedback').val();
+
+        // Perform form validation
+        if (name === '' || email === '' || rating === '') {
+            alert('Please fill in all required fields.');
+            return;
+        }
+
+        // Send form data to the server (you can customize this part)
+        // Example code using jQuery AJAX:
+        $.ajax({
+            url: 'submit.php', // URL to submit the form data
+            method: 'POST',
+            data: {
+                name: name,
+                email: email,
+                rating: rating,
+                feedback: feedback
+            },
+            success: function(response) {
+                // Handle the server's response here
+                alert('Thank you for your feedback!');
+                // You can redirect the user to a thank-you page, for example
+                window.location.href = 'thankyou.html';
+            },
+            error: function(xhr, status, error) {
+                // Handle error responses from the server
+                alert('An error occurred. Please try again later.');
+            }
+        });
+    });
+});
+
+    </script>
+    <style>
+        body {
+    font-family: Arial, sans-serif;
+    margin: 20px;
+}
+
+h1 {
+    text-align: center;
+}
+
+form {
+    width: 400px;
+    margin: 0 auto;
+}
+
+.question {
+    margin-bottom: 10px;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+input[type="text"],
+input[type="email"],
+textarea {
+    width: 100%;
+    padding: 5px;
+}
+
+button {
+    margin-top: 10px;
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+    </style>
+</body>
+</html>

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Number Guessing Game</title>
+  <style>
+    body {
+      text-align: center;
+    }
+
+    h1 {
+      color: #333;
+    }
+
+    input[type="number"] {
+      padding: 5px;
+      font-size: 16px;
+    }
+
+    button {
+      padding: 5px 10px;
+      font-size: 16px;
+    }
+
+    p {
+      color: #777;
+    }
+  </style>
+</head>
+<body>
+  <h1>Number Guessing Game</h1>
+  <p>Guess a number between 1 and 100:</p>
+  <input type="number" id="guessInput">
+  <button id="guessButton">Submit</button>
+  <p id="hint"></p>
+
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script>
+    $(document).ready(function() {
+      var targetNumber = Math.floor(Math.random() * 100) + 1;
+      var guessInput = $('#guessInput');
+      var guessButton = $('#guessButton');
+      var hint = $('#hint');
+
+      guessButton.on('click', function() {
+        var userGuess = parseInt(guessInput.val());
+
+        if (isNaN(userGuess) || userGuess < 1 || userGuess > 100) {
+          hint.text('Please enter a valid number between 1 and 100.');
+          return;
+        }
+
+        if (userGuess < targetNumber) {
+          hint.text('Higher!');
+        } else if (userGuess > targetNumber) {
+          hint.text('Lower!');
+        } else {
+          hint.text('Congratulations! You guessed the correct number.');
+          guessInput.prop('disabled', true);
+          guessButton.prop('disabled', true);
+        }
+
+        guessInput.val('');
+        guessInput.focus();
+      });
+    });
+  </script>
+</body>
+</html>

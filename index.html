@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Hotel Website</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+      zoom: 60%;
+    }
+    
+    .background {
+  background-image: url("downloadjpg.jpg"); /* Replace 'hotel-background.jpg' with your image file */
+  background-size: cover;
+  background-position: center;
+  height: 1550px;
+}
+
+.slideshow-container {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 50px;
+  padding: 550px;
+  position: relative; /* Add this line */
+}
+
+.slideshow-container .selected-image {
+  position: absolute;
+  left: calc(50% - 45%); /* Adjust the positioning as desired */
+  top: 200px; /* Adjust the positioning as desired */
+  width: 45%;
+  z-index: 1; /* Add this line to place the selected image above the overlay */
+}
+
+    
+    .overlay {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(255, 255, 255, 0.6); /* Adjust the opacity and color as desired */
+      text-shadow: 5px 5px 5px black;
+      
+
+
+
+    }
+    
+.overlay h1{
+  margin-left: 1400px;
+  margin-top: 680px;
+}
+
+.content{
+  margin-left: 1600px;
+  margin-top: 650px;
+}
+
+    h1 {
+      color: snow;
+      text-transform: uppercase;
+      font-size: 48px;
+      font-weight: bolder;
+      letter-spacing: 5px;
+      margin-top: 70px;
+      font-family: Arial, Helvetica, sans-serif;
+      color: white;
+      text-shadow: 5px 5px 5px black;
+    }
+    
+    .slideshow-container {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 50px;
+      padding: 590px;
+      text-shadow: 5px 5px 5px black;
+
+    }
+    
+
+ 
+    .slideshow img {
+  width: 290px;
+  cursor: pointer;
+  border: solid purple 2px;
+  transition: transform 0.5s;
+  margin-right: 97px;
+}
+
+.slideshow img.selected {
+  transform: scale(1.1);
+}
+
+.slideshow img.hovered {
+  transform: scale(1.1);
+}
+
+img{
+  margin-right: 259px;
+}
+    
+    .hotel-text {
+      width: 45%;
+      margin-left: 700px;
+      text-align: center;
+      padding-top: -70px;
+      padding-right: 20px;
+      padding: 25px;
+      font-size: 10px;
+
+    }
+    
+    .hotel-text h2 {
+      font-size: 24px;
+      margin-bottom: 10px;
+    }
+    
+    .hotel-text p {
+      font-size: 25px;
+      line-height: 24px;
+    }
+    
+    .end-section {
+      background-color: purple;
+      padding: 160px;
+      text-align: center;
+      color: white;
+    }
+    
+    .end-section input[type="text"],
+    .end-section textarea {
+      padding: 10px;
+      margin: 10px;
+      border-radius: 5px;
+      border: none;
+      width: 100%;
+    }
+    
+    .end-section h1 {
+      font-size: 32px;
+      margin-bottom: 20px;
+    }
+    
+    .end-section input[type="submit"] {
+      background-color: #ff6f00;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 16px;
+    }
+    
+
+    
+    .slideshow-container .selected-image img {
+      width: 100px;
+      height: auto;
+      cursor: pointer;
+      margin-top: 350px;
+    }
+    
+    .requairment{
+      background-color: transparent;
+      background-color: rgba(255, 255, 255, 0.6); /* Adjust the opacity and color as desired */
+      text-decoration: none;
+      padding-top: 45px;
+
+      
+
+    }
+
+    .requairment a{
+      text-decoration: none;
+      font-size: 18px;
+      margin: 100px;
+      color: black;
+      font-weight: bolder;
+    }
+
+  </style>
+</head>
+<body>
+  <div class="background">
+    <div class="requairment">
+      <a href="game.html">Lojra me numra</a>
+      <a href="letter.html">Lojra me shkronja</a>
+      <a href="quest.html">Pytsor Per ju</a>
+
+    </div>
+    <div class="overlay">
+      <h1>BLUEBLACK</h1>
+    </div>
+    <div class="content">
+    </div>
+  </div>
+
+  <div class="slideshow-container">
+    <div class="slideshow">
+      <div class="slideshow">
+        <img class="slide" src="download1.png" alt="Place 3 Image">
+      </div>
+    </div>
+    <div class="slideshow">
+      <img class="slide" src="downloadjpg.jpg" alt="Place 3 Image">
+    </div>
+    <div class="slideshow">
+      <img class="slide" src="images.png" alt="Place 4 Image">
+    </div>
+    <div class="slideshow">
+      <img class="slide" src="download7.jpg" alt="Place 5 Image">
+    </div>
+  </div>
+
+  <div class="hotel-text">
+    <h2>About Us</h2>
+    <p>Welcome to Blueback Hotel, the perfect destination for your next vacation. Located in a picturesque setting, our hotel offers a unique experience for all our guests. With comfortable accommodations, exceptional amenities, and friendly staff, we strive to make your stay memorable.</p>
+    <p>Explore the stunning beauty of the surrounding areas, indulge in delicious cuisine at our onsite restaurant, or relax by the poolside. Whatever your preferences, we have something for everyone.</p>
+  </div>
+
+  <div class="end-section">
+    <h1>Contact Us</h1>
+    <form id="rate-us-form" action="https://formspree.io/f/xqkoovab" method="POST">
+      <div class="rating-container">
+        
+        <label>
+          Your email:
+          <input type="email" name="email">
+        </label>
+        <label>
+          Your message:
+          <textarea name="message"></textarea>
+        </label>
+        <button type="submit">Send</button>
+        <span class="star" data-value="1">&#9733;</span>
+        <span class="star" data-value="2">&#9733;</span>
+        <span class="star" data-value="3">&#9733;</span>
+        <span class="star" data-value="4">&#9733;</span>
+        <span class="star" data-value="5">&#9733;</span>
+      </div>
+    
+      <div id="improvement-suggestions" style="display: none;">
+        <label for="feedback">What can we improve?</label>
+        <textarea id="feedback" name="feedback" rows="4" cols="50"></textarea>
+      </div>
+    
+    </form>
+    
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+      $(document).ready(function() {
+        $('.star').click(function() {
+          $(this).prevAll().addBack().addClass('active');
+          $(this).nextAll().removeClass('active');
+          if ($(this).data('value') < 3) {
+            $('#improvement-suggestions').slideDown();
+          } else {
+            $('#improvement-suggestions').slideUp();
+          }
+        });
+    
+        $('#rate-us-form').submit(function(event) {
+          event.preventDefault();
+          var selectedStars = $('.star.active').length;
+          var feedback = $('#feedback').val();
+          $('<input>').attr({
+            type: 'hidden',
+            name: 'stars',
+            value: selectedStars
+          }).appendTo('#rate-us-form');
+          $('<input>').attr({
+            type: 'hidden',
+            name: 'feedback',
+            value: feedback
+          }).appendTo('#rate-us-form');
+          $(this).unbind('submit').submit();
+        });
+      });
+      
+    </script>
+    
+    
+    
+    
+    
+    
+    
+  </div>
+
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script>
+   $(document).ready(function() {
+  const slides = $('.slide');
+  let currentSlide = 0;
+  const selectedImageContainer = $('<div class="selected-image"></div>');
+  const slideshowContainer = $('.slideshow-container');
+  slideshowContainer.append(selectedImageContainer);
+
+  function showSlide(index) {
+    slides.each(function(i) {
+      if (i === index) {
+        $(this).addClass('selected');
+      } else {
+        $(this).removeClass('selected');
+      }
+    });
+  }
+
+  function nextSlide() {
+    currentSlide = (currentSlide + 4) % slides.length;
+    showSlide(currentSlide);
+  }
+
+  showSlide(currentSlide);
+
+  slides.on('click', function() {
+    nextSlide();
+  });
+
+  slides.on('mouseenter', function() {
+    $(this).addClass('hovered');
+  });
+
+  slides.on('mouseleave', function() {
+    $(this).removeClass('hovered');
+  });
+});
+
+
+  </script>
+</body>
+</html>
